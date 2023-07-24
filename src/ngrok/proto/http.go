@@ -53,7 +53,7 @@ func NewHttp() *Http {
 	}
 }
 
-func extractBody(r io.Reader) ([]byte, io.ReadCloser, error) {
+func extractBody(r io.ReadCloser) ([]byte, io.ReadCloser, error) {
 	buf := new(bytes.Buffer)
 	//_, err := buf.ReadFrom(r)
 	defer r.Close() // 这个是重点
